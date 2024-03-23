@@ -1,0 +1,64 @@
+.seccion1{
+  height: 28rem;
+  width: 45vw ;
+  background-image: url('./../../../assets/reservasform.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 5px 3px 19px -1px rgba(0,0,0,0.79);
+  -webkit-box-shadow: 5px 3px 19px -1px rgba(0,0,0,0.79);
+  -moz-box-shadow: 5px 3px 19px -1px rgba(0,0,0,0.79);
+}
+
+.login{
+  margin: auto;
+  width: 20rem;
+  margin-top: 20px;
+  margin-right: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.datos{
+  width: 14rem;
+  height: 100%;
+  margin-left: 50px;
+}
+
+.datos span{
+  margin-bottom: 25px;
+}
+
+.entrar{
+  height: 35px;
+  display: flex;
+  justify-content:center;
+  margin-left: -3rem;
+}
+
+.entrarR{
+  margin-top: 3rem;
+}
+@media screen and (max-width:812px) {
+  .seccion1{
+    width: 22rem;
+  }
+  .datos{
+    margin: auto;
+  }
+}
+
+@media screen and (max-width:1050px) {
+  .seccion1{
+    width: 22rem;
+
+  }
+  .datos{
+    margin: auto;
+  }
+}
+
+.p-calendar .p-disabled {
+  text-decoration: line-through;
+  color: red;
+}

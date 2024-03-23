@@ -1,0 +1,84 @@
+<div class="seccion1">
+  <div class="card flex justify-content-center gap-2">
+    <p-toast position="top-center" key="tc" [life]="5000" ></p-toast>
+  </div>
+  
+  <div class="login" *ngIf="!datosReserva; else ReservaForm">
+    <div class="datos" >
+      <h3 style="margin-left: 30px; margin-bottom: 25px;">Datos personales: </h3>
+      <span class="p-float-label p-inputtext-sm">
+        <input pInputText id="username" [style]="{'width': '14rem'}" [(ngModel)]="huesped.nombre"/>
+        <label htmlFor="username">Nombre y apellidos</label>
+      </span>
+
+      <span class="p-float-label p-inputtext-sm">
+        <input pInputText id="correo" [style]="{'width': '14rem'}"  [(ngModel)]="huesped.correo"/>
+        <label htmlFor="correo">Correo</label>
+      </span>
+
+      <span class="p-float-label p-inputtext-sm" [style]="{'margin-bottom': '25px'}" >
+        <p-inputMask mask="99999999" id="telefono" [style]="{'width': '14rem'}"  [(ngModel)]="huesped.telefono"></p-inputMask>
+        <label htmlFor="telefono">Teléfono</label>
+      </span>
+
+      <span class="p-float-label p-inputtext-sm"  [style]="{'margin-bottom': '25px'}">
+        <p-inputMask  mask="99999999999" id="Número de identidad" [style]="{'width': '14rem'}"  [(ngModel)]="huesped.CI"></p-inputMask>
+        <label htmlFor="Número de identidad">Número de identidad</label>
+      </span>
+
+      <div class="card flex justify-content-center"  [style]="{ 'margin-left':'7px','margin-bottom': '25px'}">
+        <p-selectButton [options]="stateOptions" optionLabel="label"  optionValue="value" [style]="{'width': '14rem'}"  [(ngModel)]="huesped.sexo"></p-selectButton>
+      </div>
+
+
+      <div class="entrar">
+          <button pButton pRipple label="Reservar" class="p-button-success" (click)="agregarHuesped()"></button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #ReservaForm>
+    <div class="login" >
+        <div class="datos" >
+          <h3 style="margin-left: 30px">Sobre su reserva:</h3>
+          <span class="p-float-label p-inputtext-sm" [style]="{'margin-bottom': '5px'}">
+            <input id="disabled-input" type="text" pInputText [disabled]="true" style="width: 14rem;" />
+            <label htmlFor="username">{{huesped.nombre}}</label>
+          </span>
+
+          <span class="p-float-label p-inputtext-sm" [style]="{'margin-bottom': '5px'}">
+            <input id="disabled-input" type="text" pInputText [disabled]="true" style="width: 14rem;"  />
+            <label htmlFor="correo">Habitación:  <b>{{reserva.numero_habitacion}}</b> </label>
+          </span>
+
+          <span class="p-float-label p-inputtext-sm" [style]="{'margin-bottom': '5px'}">
+            <p-inputNumber inputId="integeronly" [disabled]="true" [style]="{'width': '14rem'}"> </p-inputNumber>
+            <label htmlFor="Precio"> Precio:   <b>{{reserva.precio}}</b></label>
+          </span>
+
+          <!-- El ng model de aqui es con un arreglo -->
+          <div style="height: 5rem; width: 5rem;margin-top: -17px;">
+            <div class="card flex justify-content-center p-inputtext-sm" style="position: absolute;">
+              <h5>Fecha de llegada:</h5>
+              <p-calendar  [style]="{'width': '14rem'}"  dateFormat="dd/mm/yy"  [(ngModel)]="reserva.fecha_llegada" ></p-calendar>
+               <!-- [disabledDates]="getDisabledDays()" -->
+            </div>
+          </div>
+
+          <div style="height: 5rem; width: 5rem;margin-top: 15px">
+            <div class="card flex justify-content-center p-inputtext-sm" style="position: absolute;">
+              <h5>Fecha de salida:</h5>
+              <p-calendar  [style]="{'width': '14rem'}" dateFormat="dd/mm/yy" [(ngModel)]="reserva.fecha_salida" ></p-calendar>
+             </div>
+          </div>
+
+
+          <div class="entrar entrarR">
+              <button pButton pRipple label="Reservar" class="p-button-success" (click)="agregarReserva()"></button>
+          </div>
+
+        </div>
+      </div>
+   </ng-template>
+
+</div>

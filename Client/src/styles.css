@@ -1,0 +1,16 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+
+@font-face {
+  font-family: 'NotoSerifDisplay';
+  src: url('/assets/fuentes/NotoSerifDisplay-VariableFont_wdth\,NotoSerifDisplay-VariableFont_wdth');
+}
+
+*{
+  margin-left: 0;
+  margin-right: 0;
+  font-family: 'NotoSerifDisplay';
+  user-select: none;
+}
+

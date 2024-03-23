@@ -1,0 +1,58 @@
+<div class="seccion1">
+  <!-- Mensajes -->
+  <div class="card flex justify-content-center gap-2">
+    <p-toast position="top-center" key="tc" [life]="5000" ></p-toast>
+  </div>
+
+  <div class="login">
+    <div class="datos">
+      <h3>Inserte sus datos </h3>
+      <form action="pass">
+        <div class="usuario">
+            <span class="p-float-label">
+              <input pInputText id="username" [(ngModel)]="usuario.username" name="username" autocomplete="username"/>
+              <label htmlFor="username">Usuario</label>
+            </span>
+        </div>
+
+          <div class="card flex justify-content-center password">
+              <span class="p-float-label">
+                  <p-password [feedback]="false" [(ngModel)]="usuario.password" name="contrasenna"  autocomplete="contrasenna"></p-password>
+                  <label for="password">Password</label>
+              </span>
+          </div>
+
+          <div *ngIf="login; else crearCuenta"></div>
+            <ng-template #crearCuenta>
+              <div class="password card flex justify-content-center">
+                <span class="p-float-label">
+                  <p-password [feedback]="false"  [(ngModel)]="confirmarContrasenna" name="confirmarContrasenna" autocomplete="confirmarContrasenna" ></p-password>
+                  <label for="password" >Confirmar contraseña</label>
+                </span>
+              </div>
+            </ng-template>
+
+          <div *ngIf="login; else botonCrear" class="entrar">
+            <button pButton pRipple label="Iniciar" class="p-button-success" (click)="logear()"></button>
+          </div>
+          <ng-template #botonCrear method="post">
+            <span class="entrar">
+              <button pButton pRipple label="Crear cuenta" class="p-button-success" (click)="crearCuentaUsuario()"></button>
+            </span>
+          </ng-template>
+        </form>
+
+
+
+
+        <div *ngIf="login; else virar">
+          <h5><a (click)="cambiarLogin()">Crear cuenta</a></h5>
+        </div>
+        <ng-template #virar>
+          <img height="40px" width="40px" style="margin-left: -10px;" src=".//../../../assets/volver.png" alt="" (click)="cambiarLogin()">
+        </ng-template>
+
+      </div>
+
+  </div>
+</div>

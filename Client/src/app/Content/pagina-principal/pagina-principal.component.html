@@ -1,0 +1,138 @@
+<div>
+    <!-- mensajes -->
+    <div class="card flex justify-content-center gap-2">
+      <p-toast position="top-center" key="tc" [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'" [hideTransitionOptions]="'1000ms'" [showTransformOptions]="'translateX(100%)'"></p-toast>
+    </div>
+
+  <div class="sk-circle  invisible">
+    <div class="sk-circle1 sk-child"></div>
+    <div class="sk-circle2 sk-child"></div>
+    <div class="sk-circle3 sk-child"></div>
+    <div class="sk-circle4 sk-child"></div>
+    <div class="sk-circle5 sk-child"></div>
+    <div class="sk-circle6 sk-child"></div>
+    <div class="sk-circle7 sk-child"></div>
+    <div class="sk-circle8 sk-child"></div>
+    <div class="sk-circle9 sk-child"></div>
+    <div class="sk-circle10 sk-child"></div>
+    <div class="sk-circle11 sk-child"></div>
+    <div class="sk-circle12 sk-child"></div>
+  </div>
+
+  <div class="seccion1">
+    <img src="./../../../assets/hotel3.jpg" alt="" class="img">
+     <!-- <div class="img"></div> -->
+  </div>
+  <div class="seccion2">
+    <h1>Hotel Melia ofrece: </h1>
+    <div>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, saepe corporis cum debitis, aliquid beatae fugit, excepturi consequuntur provident aspernatur magni ipsam. Quos aperiam nemo rem perferendis consequatur, officiis quo.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt laborum eveniet dolore similique temporibus culpa, ipsum esse aliquam facere quisquam sint dolorem aliquid ipsa quas quibusdam quam alias. Et, provident.
+      </p>
+    </div>
+  </div>
+  <img class="margen" src="./../../../assets/margen2.jpg" alt="">
+  <div class="seccion3">
+      <img  id="imgDelete" src="./../../../assets/seccion3.jpg" alt="">
+      <div>
+          <h3>Ofertas:</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique deserunt dolores laudantium eligendi repellendus iure et cumque quasi numquam totam, architecto, vitae soluta dicta sed eveniet quis fugiat ducimus possimus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam cum placeat, atque blanditiis minima nisi iste quod, cumque temporibus velit deleniti non enim eligendi debitis ad porro perspiciatis. Cupiditate, accusantium!
+          </p>
+          <br>
+          <div class="ofertas">
+              <div><img src="./../../../assets/habitaciones.png" alt="">
+                  <p>Un espectacular servicio de habitaciones climatizadas</p>
+              </div>
+              <div><img src="./../../../assets/internet.png" alt="">
+                <p>Internet libre de costo</p>
+              </div>
+              <div><img src="./../../../assets/personal.png" alt="">
+                <p>Personal encargado de la limpieza de habitaciones</p>
+              </div>
+              <div><img src="./../../../assets/bar.png" alt="">
+                <p>Bar en la piscina</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <img class="margen" src="./../../../assets/margen.jpg" alt="">
+  <div class="seccion4">
+    <div class="parrafo">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, voluptatem nisi! Pariatur accusamus eveniet error adipisci repudiandae ut sed inventore quasi molestiae dolorem, animi vel rem quis voluptates omnis quisquam.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus harum, magnam ducimus odit laudantium est dicta reprehenderit voluptatibus repellendus atque nam mollitia. Error, illo voluptates. Illo perferendis dolor laudantium placeat?
+      </p>
+    </div>
+
+    <img src="./../../../assets/seccion4.jpg" alt="">
+  </div>
+
+  <div class="seccion5">
+    <h1>Habitaciones disponibles:</h1>
+    <div class="habitaciones" *ngFor="let hab of habitaciones">
+      <div class="card flex justify-content-center acordion" >
+          <p-accordion >
+              <p-accordionTab header="Habitación:  {{hab.numero}}" [disabled]='!hab.disponible'>
+                  <div class="reservas">
+                        <p> <b>Tipo de habitacion:</b>  {{hab.id_tipo}}</p>
+                        <p> <b> Precio: </b>  {{hab.precio}}</p>
+                        <p> <b> Descripción: </b> {{hab.descripcion}}</p>
+
+                        <div>
+                            <!-- <div class="background"></div>
+                            <div class="background-texture"></div> -->
+
+                            <section class="carousel">
+                              <div class="carousel__container">
+                                <div class="carousel-item">
+                                  <img
+                                    class="carousel-item__img"
+                                    src="./../../../assets/habitacion1.jpg"
+                                    alt="people"
+                                  />
+                                </div>
+                                <div class="carousel-item">
+                                  <img
+                                    class="carousel-item__img"
+                                    src="./../../../assets/habitacion2.jpg"
+                                    alt="people"
+                                  />
+
+                                </div>
+                                <div class="carousel-item">
+                                  <img
+                                    class="carousel-item__img"
+                                    src="./../../../assets/habitacion4.jpg"
+                                    alt="people"
+                                  />
+
+                                </div>
+                                <div class="carousel-item">
+                                  <img
+                                    class="carousel-item__img"
+                                    src="./../../../assets/habitacion5.jpg"
+                                    alt="people"
+                                  />
+
+                                </div>
+
+
+                              </div>
+                            </section>
+                        </div>
+                  </div>
+                  <div>
+                     <p> <b>Informacion adicional:</b>  {{hab.info_add}}</p>
+                  </div>
+                  <div class="card flex justify-content-center boton">
+                    <p-toast></p-toast>
+                    <p-button (click)="showReserva(hab)" label="Reservar" [text]="true" [raised]="true" severity="secondary"></p-button>
+                   </div>
+              </p-accordionTab>
+
+          </p-accordion>
+      </div>
+    </div>
+  </div>
+
+</div>
